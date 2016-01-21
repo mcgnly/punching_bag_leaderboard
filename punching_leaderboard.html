@@ -9,34 +9,42 @@
   </head>
 
   <body>
+    <div  class="text-center">
 	  <div class="jumbotron">
       	<div class="container">
-        	<h1 class="text-center">Current High Score</h1>
-        	<h3 class="text-center">123</h3>
-        	<p class="text-center">by : abcdef</p>
+        	<h1 class>Current High Score</h1>
+        	<h3 class>123</h3>
+        	<p class>by : abcdef</p>
       	</div>
       </div> 
 
     <div class="leaderboard">
 	  <div class="container">
 		<div class="row">
-	  	  <div class="col-md-4">
-			<h3>Name</h3>
-			<p>abc</p>
-			<p>def</p>
-			<p>ghi</p>
-		  </div>
+      <div class="col-md-4">
+        </div>
+	  	  <div class="col-md-2">
+			   <h3>Name</h3>
+    
+			   <p>abc</p>
+			   <p>def</p>
+			   <p>ghi</p>
+        </div>
+		  
 
-		  <div class="col-md-4">
-			<h3>Score</h3>
+		  <div class="col-md-2">
+			<h3 class>Score</h3>
 			<p>123</p>
 			<p>456</p>
 			<p>789</p>
 		  </div>
 
+      <div class="col-md-4">
+        </div>
+
 		</div>
 	  </div>
-	</div>
+
 
 <!-- 	<div class="nav">
       <div class="container">
@@ -54,3 +62,17 @@
 
   </body>
 </html>
+
+// <script>
+var relayr = RELAYR.init({
+  appId: "YOUR_APP_ID"
+});
+//If you have a token and your device ID, you can start listening to your device without going through the login process
+relayr.devices().getDeviceData({
+  token: "YOUR TOKEN",
+  deviceId:"YOUR DEVICE_ID",
+  incomingData: function(data){
+    console.log("data from device", data)
+  }
+});
+// </script>
