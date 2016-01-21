@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 
+<!-- insert bootstrap styling and relayr javascript -->
   <head>
       <link rel="stylesheet" href="css/bootstrap.min.css">
     	<link rel="stylesheet" href="css/main.css">
-      <script src="https://developer.relayr.io/relayr-browser-sdk.min.js"></script>
-    
+      <script src="relayr_call.js"></script>
   </head>
 
   <body>
+
+    <!-- current high score block -->
     <div  class="text-center">
 	  <div class="jumbotron">
       	<div class="container">
@@ -18,11 +20,15 @@
       	</div>
       </div> 
 
+<!-- previous scores, hopefully ordered by value -->
     <div class="leaderboard">
 	  <div class="container">
 		<div class="row">
+      <!-- fill in space on the sides -->
       <div class="col-md-4">
         </div>
+
+        <!-- names of score-holders -->
 	  	  <div class="col-md-2">
 			   <h3>Name</h3>
     
@@ -31,7 +37,7 @@
 			   <p>ghi</p>
         </div>
 		  
-
+      <!-- correcponding scores, ordered by these -->
 		  <div class="col-md-2">
 			<h3 class>Score</h3>
 			<p>123</p>
@@ -39,40 +45,12 @@
 			<p>789</p>
 		  </div>
 
+      <!-- fill in the rest of the space -->
       <div class="col-md-4">
         </div>
 
 		</div>
 	  </div>
 
-
-<!-- 	<div class="nav">
-      <div class="container">
-        <ul class = "pull-left">
-          <li><a href="#">Name</a></li>
-          <li><a href="#">Browse</a></li>
-        </ul>
-        <ul class = "pull-right">
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Help</a></li>
-        </ul>
-      </div>
-    </div> -->
-
   </body>
 </html>
-
-// <script>
-var relayr = RELAYR.init({
-  appId: "YOUR_APP_ID"
-});
-//If you have a token and your device ID, you can start listening to your device without going through the login process
-relayr.devices().getDeviceData({
-  token: "YOUR TOKEN",
-  deviceId:"YOUR DEVICE_ID",
-  incomingData: function(data){
-    console.log("data from device", data)
-  }
-});
-// </script>
