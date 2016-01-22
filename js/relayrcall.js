@@ -24,10 +24,11 @@ $( document ).ready(function () {
 		var scores = $('.high-score').val();
 		$('<li>').text(input_name).appendTo('.names');
 		$('<li>').text(your_score).appendTo('.scores');
-		leaderboard[scores] = input_name;
+		leaderboard[input_name] = scores;
 		const ordered = {};
 		Object.keys(leaderboard).sort().forEach(function(key) {
   		ordered[key] = leaderboard[key];
+  		console.log(JSON.stringify(ordered));
 		$('.status-box').val('');
 		});
 		
