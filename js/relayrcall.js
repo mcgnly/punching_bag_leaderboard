@@ -13,22 +13,31 @@ $( document ).ready(function () {
       deviceId: keys.DEVICE_ID,
       incomingData: function(data){
         console.log("data from device", data)
-        var raw_score = text(data.readings[0].value * (5/4))
-        your_score = raw_score.toFixed(1)
-        $(".high-score").text(your_score)
+        //var raw_score = text(data.readings[0].value * (5/4))
+       // your_score = raw_score.toFixed(1)
+        //$(".high-score").text(your_score)
+        $(".high-score").text(data.readings[0].value)
       }
     });
 
+// when you click the button:
 	$('.btn').click(function() {
+		//it takes the name out of the box and the score,
 		var input_name = $('.status-box').val();
 		var scores = $('.high-score').val();
+		//and tacks it on to the end of an ordered list
 		$('<li>').text(input_name).appendTo('.names');
 		$('<li>').text(your_score).appendTo('.scores');
+		//it also makes a k/val pair in the object named leaderboard
 		leaderboard[input_name] = scores;
+		//makes a second object of the ordered leaderboard
 		const ordered = {};
+		//and sorts it. Alphabetically at the moment. 
 		Object.keys(leaderboard).sort().forEach(function(key) {
-  		ordered[key] = leaderboard[key];
-  		console.log(JSON.stringify(ordered));
+  			ordered[key] = leaderboard[key]});
+  			//right now it prints it to console
+  			console.log(JSON.stringify(ordered));
+  		//and clears out the name input box for the next person
 		$('.status-box').val('');
 		});
 		
@@ -56,6 +65,6 @@ $( document ).ready(function () {
  //  	});
 
 
-  });
+
 
 
