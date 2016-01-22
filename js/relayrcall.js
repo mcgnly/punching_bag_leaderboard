@@ -6,6 +6,7 @@ $( document ).ready(function () {
 
     var your_score = 0;
     var leaderboard = {};
+    var scores = 1;
 
 
     relayr.devices().getDeviceData({
@@ -24,10 +25,13 @@ $( document ).ready(function () {
 	$('.btn').click(function() {
 		//it takes the name out of the box and the score,
 		var input_name = $('.status-box').val();
-		var scores = $('.high-score').val();
+		//var scores = $('.high-score').val();
+		scores = scores + 1;
 		//and tacks it on to the end of an ordered list
 		// $('<li>').text(input_name).appendTo('.names');
 		// $('<li>').text(your_score).appendTo('.scores');
+		//clear out the old list
+		$('.names').empty();
 		//it also makes a k/val pair in the object named leaderboard
 		leaderboard[input_name] = scores;
 		//makes a second object of the ordered leaderboard
