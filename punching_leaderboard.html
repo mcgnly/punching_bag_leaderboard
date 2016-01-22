@@ -16,7 +16,18 @@
         	<h3 class="high-score"></h3>
         	<p>by : abcdef</p>
       	</div>
-      </div> 
+
+      <!-- name input box -->
+        <form>
+          <div class="form-group">
+            <textarea class="form-control status-box" rows="1" placeholder="Enter your name here"></textarea>
+          </div>
+        </form>
+
+      <!-- button to append the name and score to the list -->
+      <div class="button-group">
+        <a href="#" class="btn btn-primary">save</a>
+      </div>
 
 <!-- previous scores, hopefully ordered by value -->
     <div class="leaderboard">
@@ -30,9 +41,9 @@
 	  	  <div class="col-md-2">
 			   <h3>Name</h3>
     
-			   <p>abc</p>
-			   <p>def</p>
-			   <p>ghi</p>
+          <ul class ="names">
+            <li>abc</li>
+          </ul>  
         </div>
 		  
       <!-- correcponding scores, ordered by these -->
@@ -49,7 +60,7 @@
 
 		</div>
 
-    
+
 	  </div>
 
 <script src = "api_keys.js"></script>
