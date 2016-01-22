@@ -30,7 +30,7 @@ $( document ).ready(function () {
 		//clear out the old list
 		$('.names').empty();
 		//it also makes a k/val pair in the object named leaderboard
-		leaderboard[input_name] = scores;
+		leaderboard[scores] = input_name;
 		//makes a second object of the ordered leaderboard
 		const ordered = {};
 		//and sorts it. Alphabetically at the moment. 
@@ -42,7 +42,7 @@ $( document ).ready(function () {
 		$('.status-box').val('');
 		//loop through the ordered index and make a list of them
 		for (var index in ordered) {
-			$('<li>').text(index+ "  :   " + ordered[index]).appendTo('.names');
+			$('<li>').text(ordered[index]+ "   :   " + index).appendTo('.names');
 			//$('<li>').text(ordered[]).appendTo('.scores');
 		};
 	});	
