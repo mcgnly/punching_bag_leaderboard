@@ -27,9 +27,6 @@ $( document ).ready(function () {
 		var input_name = $('.status-box').val();
 		//var scores = $('.high-score').val();
 		scores = scores + 1;
-		//and tacks it on to the end of an ordered list
-		// $('<li>').text(input_name).appendTo('.names');
-		// $('<li>').text(your_score).appendTo('.scores');
 		//clear out the old list
 		$('.names').empty();
 		//it also makes a k/val pair in the object named leaderboard
@@ -43,9 +40,9 @@ $( document ).ready(function () {
   			console.log(JSON.stringify(ordered));
   		//and clears out the name input box for the next person
 		$('.status-box').val('');
-		
+		//loop through the ordered index and make a list of them
 		for (var index in ordered) {
-			$('<li>').text(ordered[index]).appendTo('.names');
+			$('<li>').text(index+ "  :   " + ordered[index]).appendTo('.names');
 			//$('<li>').text(ordered[]).appendTo('.scores');
 		};
 	});	
