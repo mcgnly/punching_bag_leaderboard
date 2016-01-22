@@ -26,16 +26,18 @@ $( document ).ready(function () {
 		//it takes the name out of the box and the score,
 		var input_name = $('.status-box').val();
 		//var scores = $('.high-score').val();
-		scores = scores + 1;
+		//generate random number for the score for now while the sensor isn't here
+		scores = Math.floor(Math.random() *10);
 		//clear out the old list
 		$('.names').empty();
 		//it also makes a k/val pair in the object named leaderboard
 		leaderboard[scores] = input_name;
 		//makes a second object of the ordered leaderboard
 		const ordered = {};
-		//and sorts it. Alphabetically at the moment. 
+		//and sorts it. increasing at the moment. 
 		Object.keys(leaderboard).sort().forEach(function(key) {
   			ordered[key] = leaderboard[key]});
+	
   			//right now it prints it to console
   			console.log(JSON.stringify(ordered));
   		//and clears out the name input box for the next person
