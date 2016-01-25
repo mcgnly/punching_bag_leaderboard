@@ -1,35 +1,40 @@
 $( document ).ready(function () {
 
-    var relayr = RELAYR.init({
-      appId: keys.APP_ID
-    });
+    // var relayr = RELAYR.init({
+    //   appId: keys.APP_ID
+    // });
 
     var your_score = 0;
     var leaderboard = {};
     var scores = 1;
 
 
-    relayr.devices().getDeviceData({
-      token: keys.TOKEN,
-      deviceId: keys.DEVICE_ID,
-      incomingData: function(data){
-        console.log("data from device", data)
+    // relayr.devices().getDeviceData({
+    //   token: keys.TOKEN,
+    //   deviceId: keys.DEVICE_ID,
+    //   incomingData: function(data){
+    //     console.log("data from device", data)
         //var raw_score = text(data.readings[0].value * (5/4))
        // your_score = raw_score.toFixed(1)
         //$(".high-score").text(your_score)
-        $(".high-score").text(data.readings[0].value)
-      }
-    });
+        // uncomment me to get data from relayr
+        // $(".high-score").text(data.readings[0].value)
+    //   }
+    // });
+
+    $('#punch-button').click(function() {
+		//generate random number to simulate a punch
+		your_score = (Math.random().toFixed(2) *10)
+		$('.high-score').text(your_score)
+		console.log("punch value: ", your_score)
+		});	
 
 // when you click the button:
-	$('.btn').click(function() {
+	$('#save-button').click(function() {
 		//it takes the name out of the box and the score,
 		var input_name = $('.status-box').val();
-		//var scores = $('.high-score').val();
+		var scores = $('.high-score').text();
 
-		//generate random number for the score for now while the sensor isn't here
-		scores = Math.floor(Math.random() *10);
-		
 		//clear out the old list
 		$('.names').empty();
 		//it also makes a k/val pair in the object named leaderboard
@@ -47,8 +52,10 @@ $( document ).ready(function () {
 		//loop through the ordered index and make a list of them
 		for (var index in ordered) {
 			$('<li>').text(ordered[index]+ "   :   " + index).appendTo('.names');
-			//$('<li>').text(ordered[]).appendTo('.scores');
+			$('<li>').text(ordered).appendTo('.scores');
 		};
+
+
 	});	
 	});
 
