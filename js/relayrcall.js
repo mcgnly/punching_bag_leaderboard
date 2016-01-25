@@ -5,7 +5,7 @@ $( document ).ready(function () {
     // });
 
     var your_score = 0;
-    var leaderboard = {};
+    var leaderboard = [];
     var scores = 1;
 
 
@@ -34,46 +34,22 @@ $( document ).ready(function () {
 		//it takes the name out of the box and the score,
 		var input_name = $('.status-box').val();
 		var scores = $('.high-score').text();
-
+		var name_score = [scores, input_name]
 		//clear out the old list
 		$('.names').empty();
-		//it also makes a k/val pair in the object named leaderboard
-		leaderboard[scores] = input_name;
-		//makes a second object of the ordered leaderboard
-		const ordered = {};
-		//and sorts it. increasing at the moment. 
-		Object.keys(leaderboard).sort().forEach(function(key) {
-  			ordered[key] = leaderboard[key]});
-	
-  			//right now it prints it to console
-  			console.log(JSON.stringify(ordered));
-  		//and clears out the name input box for the next person
+
+		leaderboard.push(name_score)
+		ordered = leaderboard.sort();
+		console.log(JSON.stringify(ordered));
 		$('.status-box').val('');
 
 		// loop through the ordered index and make a list of them
-		for (var index in ordered) {
-			$('<li>').text(ordered[index]+ "   :   " + index).appendTo('.names');
-			$('<li>').text(ordered).appendTo('.scores');
+		for (var index = ordered.length; index-- > 0; ) {
+			$('<li>').text(ordered[index][1]+ "   :   " + ordered[index][0]).appendTo('.names');
 		};
-
-		// for (var i = ordered.length; i >=0 ; i--){
-		// 	$('<li>').text(ordered[index]+ "   :   " + index).appendTo('.names');
-		// 	$('<li>').text(ordered).appendTo('.scores');
-		// };
-
 
 	});	
 	});
-
-
-// example of how to create an object that acts as a dictionary and add to it
-// var data = {
-//     'manager': ["Prateek","Rudresh","Prashant"], 
-//     'employee': ["namit","amit","sushil"], 
-//     'hr': ["priya"]
-// };
-// data["key3"] = "value3";
-
 
 // 
 // I want to have the button disabled if the text field empty, not working right now
