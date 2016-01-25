@@ -24,9 +24,9 @@ $( document ).ready(function () {
 
     $('#punch-button').click(function() {
 		//generate random number to simulate a punch
-		your_score = (Math.random().toFixed(2) *10)
+		your_score = Math.floor((Math.random() * 10) + 1);
 		$('.high-score').text(your_score)
-		console.log("punch value: ", your_score)
+		// console.log("punch value: ", your_score)
 		});	
 
 // when you click the button:
@@ -49,11 +49,17 @@ $( document ).ready(function () {
   			console.log(JSON.stringify(ordered));
   		//and clears out the name input box for the next person
 		$('.status-box').val('');
-		//loop through the ordered index and make a list of them
+
+		// loop through the ordered index and make a list of them
 		for (var index in ordered) {
 			$('<li>').text(ordered[index]+ "   :   " + index).appendTo('.names');
 			$('<li>').text(ordered).appendTo('.scores');
 		};
+
+		// for (var i = ordered.length; i >=0 ; i--){
+		// 	$('<li>').text(ordered[index]+ "   :   " + index).appendTo('.names');
+		// 	$('<li>').text(ordered).appendTo('.scores');
+		// };
 
 
 	});	
