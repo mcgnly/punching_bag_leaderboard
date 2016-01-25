@@ -26,8 +26,10 @@ $( document ).ready(function () {
 		//it takes the name out of the box and the score,
 		var input_name = $('.status-box').val();
 		//var scores = $('.high-score').val();
+
 		//generate random number for the score for now while the sensor isn't here
 		scores = Math.floor(Math.random() *10);
+		
 		//clear out the old list
 		$('.names').empty();
 		//it also makes a k/val pair in the object named leaderboard
