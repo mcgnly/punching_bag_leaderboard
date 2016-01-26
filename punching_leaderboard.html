@@ -3,12 +3,8 @@
 
 <!-- insert bootstrap styling and relayr javascript -->
   <head>
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-    	<link rel="stylesheet" href="css/main.css">
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="https: //developer.relayr.io/relayr-browser-sdk.min.js"></script>
-      
-      <script src="relayr_call.js"></script>
+      <link rel="stylesheet" href="css/bootstrap.min.css">   
+      <link rel="stylesheet" href="css/my-css.css">   
   </head>
 
   <body>
@@ -17,43 +13,72 @@
     <div  class="text-center">
 	  <div class="jumbotron">
       	<div class="container">
-        	<h1>Current High Score</h1>
-        	<h3 class= "high_score">123</h3>
-        	<p class= "high_score_name">by : abcdef</p>
+          <br>
+        	<h1>Your Score</h1>
+          <!-- this displays the data from the sensor, scaled up to 10 and rounded down to one decimal -->
+        	<h1 class="high-score"></h1>
+          <!-- line breaks for prettyness -->
+        	<br>
+          <br>
+          <br>
       	</div>
-      </div> 
 
-<!-- previous scores, hopefully ordered by value -->
+      <!-- name input box -->
+        <form>
+          <div class="form-group">
+            <textarea class="form-control status-box" rows="1" placeholder="Enter your name here"></textarea>
+          </div>
+        </form>
+
+      <!-- button to append the name and score to the list -->
+      <div class="button-group">
+        <a href="#" class="btn btn-primary" id = "save-button">save</a>
+      </div>
+<!-- end of jumbotron -->
+</div>
+
+
+<!-- previous names and scores, displayed in descending order -->
     <div class="leaderboard">
 	  <div class="container">
 		<div class="row">
-      <!-- fill in space on the sides -->
-      <div class="col-md-4">
-        </div>
 
-        <!-- names of score-holders -->
-	  	  <div class="col-md-2">
-			   <h3>Name</h3>
-    
-			   <p>abc</p>
-			   <p>def</p>
-			   <p>ghi</p>
+      <!-- fill in space on the sides -->
+      <div class="col-md-4"></div>
+
+      <!-- names and scores, descending order -->
+	  	<div class="col-md-4">
+			   <h3>Rankings:</h3>
+          <ol class ="names-scores">
+          </ol>  
         </div>
-		  
-      <!-- correcponding scores, ordered by these -->
-		  <div class="col-md-2">
-			<h3 class>Score</h3>
-			<p>123</p>
-			<p>456</p>
-			<p>789</p>
-		  </div>
 
       <!-- fill in the rest of the space -->
-      <div class="col-md-4">
-        </div>
+      <div class="col-md-4"></div>
 
 		</div>
+    </div>
 	  </div>
+
+<!-- button to append the name and score to the list  -->
+    <!-- <div class ="punch">  
+      <div class="button-group">
+        <a href="#" class="btn btn-primary" id ="punch-button">punch!</a>
+      </div>
+    </div> -->
+
+  <br>
+  <br>
+  <br>
+  <!-- photo credit -->
+  <p>Adapted from original image by <a href="https://www.flickr.com/photos/53924071@N06/6060114798/">Snow0810</a>. 
+      (CC BY-SA 2.0)</p> 
+
+<!-- finally at the end, load the scripts -->
+  <script src = "api_keys.js"></script>
+  <script src="/Users/katiemcginley/bower_components/jquery/dist/jquery.js"></script>
+  <script src="https://developer.relayr.io/relayr-browser-sdk.min.js"></script>
+  <script src="js/relayrcall.js"></script>
 
   </body>
 </html>
