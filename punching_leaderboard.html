@@ -15,7 +15,9 @@
       	<div class="container">
           <br>
         	<h1>Your Score</h1>
+          <!-- this displays the data from the sensor, scaled up to 10 and rounded down to one decimal -->
         	<h1 class="high-score"></h1>
+          <!-- line breaks for prettyness -->
         	<br>
           <br>
           <br>
@@ -32,51 +34,51 @@
       <div class="button-group">
         <a href="#" class="btn btn-primary" id = "save-button">save</a>
       </div>
+<!-- end of jumbotron -->
 </div>
 
 
-<!-- previous scores, hopefully ordered by value -->
+<!-- previous names and scores, displayed in descending order -->
     <div class="leaderboard">
 	  <div class="container">
 		<div class="row">
-      <!-- fill in space on the sides -->
-      <div class="col-md-4">
-        </div>
 
-        <!-- names of score-holders -->
-	  	  <div class="col-md-4">
+      <!-- fill in space on the sides -->
+      <div class="col-md-4"></div>
+
+      <!-- names and scores, descending order -->
+	  	<div class="col-md-4">
 			   <h3>Rankings:</h3>
-    
-          <ol class ="names">
+          <ol class ="names-scores">
           </ol>  
         </div>
 
-
       <!-- fill in the rest of the space -->
-      <div class="col-md-4">
-        </div>
+      <div class="col-md-4"></div>
 
 		</div>
     </div>
 	  </div>
 
-    <!-- <div class ="punch">
-            button to append the name and score to the list 
+<!-- button to append the name and score to the list  -->
+    <!-- <div class ="punch">  
       <div class="button-group">
         <a href="#" class="btn btn-primary" id ="punch-button">punch!</a>
       </div>
-
     </div> -->
 
-<script src = "api_keys.js"></script>
-<script src="/Users/katiemcginley/bower_components/jquery/dist/jquery.js"></script>
-<script src="https://developer.relayr.io/relayr-browser-sdk.min.js"></script>
-<script src="js/relayrcall.js"></script>
+  <br>
+  <br>
+  <br>
+  <!-- photo credit -->
+  <p>Adapted from original image by <a href="https://www.flickr.com/photos/53924071@N06/6060114798/">Snow0810</a>. 
+      (CC BY-SA 2.0)</p> 
 
-          <br>
-          <br>
-          <br>
-<p>Adapted from original image by <a href="https://www.flickr.com/photos/53924071@N06/6060114798/">Snow0810</a>. 
-(CC BY-SA 2.0)</p> 
+<!-- finally at the end, load the scripts -->
+  <script src = "api_keys.js"></script>
+  <script src="/Users/katiemcginley/bower_components/jquery/dist/jquery.js"></script>
+  <script src="https://developer.relayr.io/relayr-browser-sdk.min.js"></script>
+  <script src="js/relayrcall.js"></script>
+
   </body>
 </html>
