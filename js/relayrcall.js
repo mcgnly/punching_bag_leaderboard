@@ -1,26 +1,27 @@
 $( document ).ready(function () {
 
-    var relayr = RELAYR.init({
-      appId: keys.APP_ID
-    });
+    // var relayr = RELAYR.init({
+    //   appId: keys.APP_ID
+    // });
 
     var your_score = "";
     var leaderboard = [];
     var scores = 1;
 
 
-    relayr.devices().getDeviceData({
-      token: keys.TOKEN,
-      deviceId: keys.DEVICE_ID,
-      incomingData: function(data){
-        console.log("data from device", data)
-        var raw_score = text(data.readings[0].value * (5/4))
+    // relayr.devices().getDeviceData({
+    //   token: keys.TOKEN,
+    //   deviceId: keys.DEVICE_ID,
+    //   incomingData: function(data){
+    //     console.log("data from device", data)
+        // var raw_score = text(data.readings[0].value * (5/4))
+        var raw_score = 2.5647356567456 * 5/4
        your_score = raw_score.toFixed(1)
         $(".high-score").text(your_score)
-        // uncomment me to get data from relayr
+        // uncomment me to get raw data from relayr
         // $(".high-score").text(data.readings[0].value)
-      }
-    });
+      // }
+    // });
 
   //   $('#punch-button').click(function() {
 		// //generate random number to simulate a punch
