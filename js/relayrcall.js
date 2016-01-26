@@ -1,33 +1,33 @@
 $( document ).ready(function () {
 
-    // var relayr = RELAYR.init({
-    //   appId: keys.APP_ID
-    // });
+    var relayr = RELAYR.init({
+      appId: keys.APP_ID
+    });
 
-    var your_score = 0;
+    var your_score = "";
     var leaderboard = [];
     var scores = 1;
 
 
-    // relayr.devices().getDeviceData({
-    //   token: keys.TOKEN,
-    //   deviceId: keys.DEVICE_ID,
-    //   incomingData: function(data){
-    //     console.log("data from device", data)
-        //var raw_score = text(data.readings[0].value * (5/4))
-       // your_score = raw_score.toFixed(1)
-        //$(".high-score").text(your_score)
+    relayr.devices().getDeviceData({
+      token: keys.TOKEN,
+      deviceId: keys.DEVICE_ID,
+      incomingData: function(data){
+        console.log("data from device", data)
+        var raw_score = text(data.readings[0].value * (5/4))
+       your_score = raw_score.toFixed(1)
+        $(".high-score").text(your_score)
         // uncomment me to get data from relayr
         // $(".high-score").text(data.readings[0].value)
-    //   }
-    // });
+      }
+    });
 
-    $('#punch-button').click(function() {
-		//generate random number to simulate a punch
-		your_score = Math.floor((Math.random() * 10) + 1);
-		$('.high-score').text(your_score)
-		// console.log("punch value: ", your_score)
-		});	
+  //   $('#punch-button').click(function() {
+		// //generate random number to simulate a punch
+		// your_score = Math.floor((Math.random() * 10) + 1);
+		// $('.high-score').text(your_score)
+		// // console.log("punch value: ", your_score)
+		// });	
 
 // when you click the button:
 	$('#save-button').click(function() {
