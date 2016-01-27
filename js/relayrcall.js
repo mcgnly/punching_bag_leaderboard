@@ -45,7 +45,7 @@ $( document ).ready(function () {
 		//throw it into an array to save
 		var name_score = [scores, input_name]
 		//clear out the old top-score list to redisplay later
-		$('.names').empty();
+		$('.names-scores').empty();
 
 		//puts the array into our list of name/score arrays
 		leaderboard.push(name_score)
