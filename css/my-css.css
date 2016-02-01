@@ -1,9 +1,11 @@
 .jumbotron {
     margin-bottom: 0px;
-    background: url('../img/punching-gloves.png');
+    background: url('../img/punching-relayr.png');
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+    background-position: center center;
+    /*background-size: auto 100%;*/
 	/*outline: 1px solid black;*/
 }
 
