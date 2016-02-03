@@ -36,6 +36,14 @@ $( document ).ready(function () {
 // 		$(".high-score").text(your_score)
 // 		});	
 
+	//reset button to set back to 0
+	$('#reset-button').click(function() {
+		//set score back to 0
+		your_score = 0;
+		$(".high-score").text(your_score)
+	});	
+
+
 // when you click the save button:
 	$('#save-button').click(function() {
 		//it takes the name out of the box and the score,
